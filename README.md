@@ -1,28 +1,63 @@
-# goit-pythonweb-hw-01
+# Проєкт: goit-pythonweb-hw-01
 
-c:\Projects\goit-pythonweb-hw-01\
+## Опис
+Цей проєкт містить дві реалізації:
+1. **Фабричний патерн (Factory Pattern)** – створення транспортних засобів за регіональними специфікаціями (US та EU).
+2. **SOLID-бібліотека** – система управління книгами в бібліотеці, розроблена відповідно до принципів SOLID (буде реалізовано на наступному етапі).
+
+## Встановлення
+Перед запуском проєкту переконайтеся, що у вас встановлений Python (рекомендована версія 3.10 або новіша).
+
+### 1️⃣ Клонування репозиторію
+```sh
+git clone https://github.com/your-repo/goit-pythonweb-hw-01.git
+cd goit-pythonweb-hw-01
+```
+
+### 2️⃣ Створення віртуального середовища
+```sh
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate    # Windows
+```
+
+### 3️⃣ Встановлення залежностей
+```sh
+pip install -r requirements.txt
+```
+
+## Запуск проєкту
+Запуск здійснюється через `main.py`, який дозволяє вибрати одну з реалізацій.
+```sh
+python main.py
+```
+
+Після запуску вам буде запропоновано вибрати:
+- `1` – Запустити **Фабричний патерн**
+- `0` – Вийти з програми
+
+Якщо вибрано `1`, то далі буде запит на вибір регіону:
+- `1` – US (американські специфікації)
+- `2` – EU (європейські специфікації)
+- `0` – Повернутися в головне меню
+
+## Структура проєкту
+```
+goit-pythonweb-hw-01/
 │
-├── factory_pattern\
+├── factory_pattern/        # Фабричний патерн
 │   ├── __init__.py
-│   ├── vehicle.py          # Базовий клас Vehicle
+│   ├── vehicle.py          # Абстрактний клас Vehicle
 │   ├── car.py              # Клас Car
 │   ├── motorcycle.py       # Клас Motorcycle
 │   ├── vehicle_factory.py  # Абстрактний клас VehicleFactory
 │   ├── us_vehicle_factory.py # Фабрика для US Spec
 │   ├── eu_vehicle_factory.py # Фабрика для EU Spec
 │
-├── solid_library\
-│   ├── __init__.py
-│   ├── book.py             # Клас Book
-│   ├── library_interface.py # Інтерфейс LibraryInterface
-│   ├── library.py          # Реалізація бібліотеки
-│   ├── library_manager.py  # Клас LibraryManager
+├── tests/                  # Тести для проєкту
+│   ├── factory_tests.py
 │
-├── tests\
-│   ├── factory_tests.py    # Тести для фабричного патерну
-│   ├── library_tests.py    # Тести для SOLID бібліотеки
-│
-├── .gitignore
-├── requirements.txt        # Список необхідних бібліотек (`black`, `mypy`, `pytest`, `loguru`)
-├── README.md               # Опис проєкту та інструкції
-├── main.py                 # Головний файл для запуску обраного модуля
+├── .gitignore              # Файл ігнорування файлів у Git
+├── requirements.txt        # Список необхідних залежностей
+├── README.md               # Документація проєкту
+├── main.py                 # Головний файл для запуску програми
